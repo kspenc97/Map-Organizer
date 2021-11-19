@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body{
+    
+    background-image: url(/images/cave2.jpg);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.invisible{
+    visibility: hidden;
+}
+
+
+.form-control input,textarea{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control label{
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    }
+
+    /*  */
+    /*  */
+    /*  */
+/* Popup Window Styles */
+    .window-div{
+        top: calc(100vh - 95vh);
+
+        z-index: 2;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        float: inline-end;
+        right: 0;
+        background: #333;
+        color: #fff;
+        min-width: 30vh;
+        height: 80vh;
+        padding: 40px;
+        border-left: 2px solid #fff;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        border-radius: 150px 0px 0px 150px;
+        line-height: 1.5;
+        background-color: rgba(0, 0, 0, 0.85);
+        transform: translateX(100vw);
+        transition: transform 1s ease-in-out;
+        box-shadow: 2px 3px 5px 3px rgba(255, 255, 255, 0.2);
+        /* this moves it off the screen by 400px */
+        /* you select the property to transition as the first arg of transition */
+    }
+    .window-div.show{
+        transform: translateX(0vw);
+    }
+    .window-div input{
+        width: 90vw;
+        padding: 20px;
+        border-radius: 20px;
+        border: none;
+        margin: 10px;
+    }
+    .window-div textarea{
+        width: 90vw;
+        height: 20vh;
+        padding: 20px;
+        border-radius: 20px;
+        border: none;
+        margin: 10px;
+    }
+    .window-div div{
+        width: 90vw;
+        padding: 20px;
+        border-radius: 20px;
+        border: none;
+        margin: 10px;
+        border: 2px;
+    }
+    .time-box{
+        background-color: rgba(6, 148, 1, 0.45);
+        
+    }
+    .yellow{
+        background-color: rgba(133, 148, 1, 0.45);
+    }
+    .red{
+        background-color: rgba(148, 1, 1, 0.45);
+    }
+   
+    .window-div div p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+        letter-spacing: 5px;
+        width: 90vw;
+        padding: 3px;
+        border-radius: 20px;
+        border: none;
+        margin: 10px;
+    }
+       .window-div select{
+        align-items: right;
+        justify-content: right;
+        font-size: 24px;
+        letter-spacing: 5px;
+        width: 17vw;
+        padding: 23px;
+        border-radius: 12px;
+        border: none;
+        margin: 10px;
+    }
+    .window-div select:hover{
+        color: white;
+        background-color: rgb(17, 17, 17);
+        border: 5px white;
+        box-shadow: 0px 0px 3px 3px rgba(238, 238, 238, 0.25);
+
+    }
+    .window-div i{
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+        letter-spacing: 5px;
+        padding: 7px;
+        padding-left: 12px;
+        padding-top: 7px;
+        padding-bottom: 9px;
+        border-radius: 12px;
+        border: none;
+        margin: 10px;
+        box-shadow: 0px 0px 4px 7px rgba(238, 238, 238, 0.35);
+
+    }
+    .window-div button{
+        align-items: flex-end;
+        justify-content: flex-end;
+        font-size: 22px;
+        letter-spacing: 5px;
+        width: 12vw;
+        padding: 23px;
+        border-radius: 12px;
+        border: none;
+        margin: 10px;
+    }
+    .window-div button:hover{
+        color: white;
+        background-color: rgb(17, 17, 17);
+        border: 5px white;
+        box-shadow: 0px 0px 3px 3px rgba(238, 238, 238, 0.25);
+
+    }
+/*  */
+/*  */
+/*  */
+/* PIN WINDOW STYLES */
+.store-pin-window{
+    background-color: white;
+    box-shadow: 2px 3px 15px 3px rgba(0, 0, 0, 0.2);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+}
+.pin-small{
+    z-index: 3;
+}
+.store-pin-title{
+    margin: 3px;
+    border-radius: 3px; 
+    margin-bottom: 7px;
+    width: 99%;
+    padding: 10px;
+    width: 70%;
+    box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.store-pin-notes{
+    border-radius: 3px;
+    margin: 3px;
+    margin-bottom: 7px;
+    padding: 10px;
+    width: 70%;
+    box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.pin-temp-data{
+    visibility: hidden;
+    position: fixed;
+    float: inline-end;
+    z-index: 5;
+}
+.store-pin-status{
+    display: flex;
+    border-radius: 3px;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    background-color: rgba(6, 148, 1, 0.45);
+    box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.7);
+}
+.store-pin-status.yellow{
+    background-color: rgba(133, 148, 1, 0.45);
+}
+.store-pin-status.red{
+    background-color: rgba(148, 1, 1, 0.45);
+}
+/* .store-pin-status.yellow{
+    background-color: rgba(133, 148, 1, 0.45);
+}
+.store-pin-status.red{
+    background-color: rgba(148, 1, 1, 0.45);
+} */
+.store-pin-last-update{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+.store-pin-edit{
+    border-radius: 3px;
+    border: none;
+    box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.7);
+    width: 70%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.store-pin-edit:hover{
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+
+
+
+/*  */
+/*  */
+/*  */
+/* Store List Style By Element */
+
+
+.store-list-div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    max-width: 700px;
+    word-wrap: break-word;
+    padding: 15px;
+    border: 2px solid;
+    border-radius: 35px;
+   /*  width: inherit; - not sure what this does */
+   color: #fff;
+   background-color: rgba(0, 0, 0, 0.85);
+   box-shadow: 2px 3px 5px 3px rgba(255, 255, 255, 0.4);
+   transition: scale .15s ease-in-out;
+}
+.store-list-div div:hover{
+    scale: .99;
+    }
+.store-list-div h1{
+    font-weight: bolder;
+    padding: 5px;
+    letter-spacing: 9px;
+    font-size: 45px;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+.store-list-div h5{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-weight: bolder;
+    word-wrap: break-word;
+    padding: 5px;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+.store-list-div i{
+    scale: 1.5;
+    box-shadow: 0px 0px 4px 5px rgba(255, 255, 255, 1);
+    background-color: rgba(255, 251, 251, 1);
+    margin-bottom: 12px;
+   }
+.store-list-div hr{
+    margin-top: 4;
+ width: 70%;
+}
+.edit-store-btn{
+    display: flex;
+    font-size: 18px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    color: rgb(0, 0, 0);
+}
+.edit-store-btn:hover{
+    display: flex;
+    font-size: 18px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    color: #fff;
+}
+/* Time Div */
+.store-list-div div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    max-width: 700px;
+    word-wrap: break-word;
+    padding: 15px;
+    border: .5px solid;
+    border-radius: 35px;
+   /*  width: inherit; - not sure what this does */
+   color: #fff;
+   background-color: rgba(6, 148, 1, 0.45);
+   box-shadow: 1px 2px 5px 2px rgba(255, 255, 255, 0.4);
+}
+.store-list-div div div.yellow{
+     background-color: rgba(133, 148, 1, 0.45);
+}
+.store-list-div div div.red{
+    background-color: rgba(148, 1, 1, 0.45);
+}
+.store-list-div div div p{
+    display: flex;
+    font-weight: bolder;
+    padding: 5px;
+    font-size: 15px;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 5px;
+   color: #fff;
+}
+/*  */
+/*  */
+/*  */
+
+
+
+
+.single-store{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(54, 119, 54);
+
+    }
+.store-title{
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+
+}
+.notes-area{
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+
+}
+.edit-store-btn{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+
+
+
+/* Icon Colors */
+
+
+
+
+.fa-maroon{
+    color: maroon;
+}
+
+.fa-green{
+    color: darkgreen;
+}
+
+.fa-blue{
+    color: navy;
+}
+
+.fa-orange{
+    color: rgb(122, 80, 0);
+}
+
+.fa-purple{
+    color: rgb(88, 28, 128);
+}
+
+.fa-grey{
+    color: rgb(83, 83, 83);
+}
+.fa-gold{
+    color: rgb(179, 162, 18);
+}
+
+
+
+/* MAP */
+.store-list-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.store-list-div-container{
+    top: calc(100vh - 77vh);
+    position: absolute;
+    visibility: visible;
+    transform: translateX(-100vw);
+    transition: transform 1s ease-in-out;
+}
+
+.store-list-div-container.show{
+    transform: translateX(0vw);
+}
+
+.map{height: 400px;
+    width: 95%;
+    box-shadow: 2px 3px 5px 3px rgba(32, 32, 32, 0.4);
+    position: fixed;
+    visibility: visible;
+    transform: translateX(0vw);
+    transition: transform 1s ease-in-out;
+    }
+
+    .map.hide{
+        transform: translateX(105vw);
+        }
+.dashboard{
+    z-index: 4;
+    border: 2px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    background-color: rgba(0, 138, 138, 0.5);
+    width: 45vw;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 14px;
+    margin-top: 14px;
+
+    box-shadow: 0 0 10px 5px rgba(218, 218, 218, 0.3);
+    text-align: center;
+
+}
+.dashboard h1{
+    margin-top: 8px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .logout{
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        width: 30vw;
+        scale: .8;
+        border-radius: 20px;
+        color: teal;
+        border: none;
+        margin: 30px;
+        box-shadow: 0 0 10px 5px rgba(218, 218, 218, 0.3);
+        transition: scale .2s;
+        visibility: visible;
+
+    }
+
+    .logout.hide{
+        scale: 0;
+    }
+
+    .logout:hover{
+        display: flex;
+        scale: .9;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+        background-color: teal;
+        border: none;
+        margin: 30px;
+        box-shadow: 0 0 10px 5px rgba(219, 219, 219, 0.3);
+        transition: scale .2s;
+    
+    }
+
+
+    @media screen and (max-width: 810px){
+        .store-list-div-container{
+            top: calc(100vh - 70vh);
+           
+        }
+
+        .window-div button{
+            scale: 1;
+            padding: 5px;
+            margin: 3px;
+            font-size: 11px;
+            letter-spacing: 0px;
+
+        }
+        .window-div i{
+            scale: .8;
+            padding: 5px;
+            margin: 3px;
+            font-size: 20px;
+            letter-spacing: 0px;
+
+
+        }
+        .window-div select{
+            scale: .8;
+            padding: 5px;
+            margin: 3px;
+            font-size: 11px;
+            letter-spacing: 0px;
+
+
+        }
+        .window-div div p{
+             scale: .8;
+            padding: 5px;
+            margin: 3px;
+            letter-spacing: 0px;
+
+        }
+        .map{height: 400px;
+            width: 85%;
+            box-shadow: 2px 3px 5px 3px rgba(32, 32, 32, 0.4);
+        
+            }
+        .window-div{
+            height: 95vh;
+            padding: 5px;
+            margin: 5px;
+        }
+        .window-div input{
+            padding: 5px;
+            margin: 5px;
+        }   
+        .window-div textarea{
+            padding: 5px;
+            margin: 5px;
+        } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 17px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(73, 73, 77);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 9px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #636363;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 1 1 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(70px);
+    -ms-transform: translateX(70px);
+    transform: translateX(67px);
+  }

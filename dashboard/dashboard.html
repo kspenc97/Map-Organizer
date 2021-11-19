@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <title>Acadia Solutions</title>
+</head>
+<body>
+    <div class="dashboard">
+    <h1 >Dashboard</h1>
+    <p>Click on the map to add a marker // Click the marker to add store data</p>
+    <label class="switch">
+        <input type="checkbox" id='viewSwitch'>
+        <span class="slider"></span>
+      </label>
+      <small>Switch Between Map and Store List view</small>
+    </div>
+    <div class="map" id="map"> 
+        
+    </div>    
+    <button id="log-out" class="logout">Log Out</button>
+
+    </form>
+    <div class="store-list-div-container" id="store-list-div-container">
+    <div class="store-list-div" id="store-list-div">
+
+    </div>
+</div>
+    
+  
+
+
+    
+    <div class="window-div" id="window-div">
+        <input id='store-title-window-input' placeholder='Add store name here!'></input>
+
+<!--         AIzaSyDEDm7wbT2wyFn2AGKfhBh8RsYNMjjJ_-o     Google maps API key under kylewazhere14@gmail.com-->
+        
+        <button class='reset-store-button' id='reset-store-button'>Reset Timer</button>
+        <i class='fas fa-map-marker-alt fa-maroon' id='window-icon'></i>
+        <select class='icon-color-select' id="icon-color-select">
+            <optgroup label='Color'>
+            <option value="fas fa-map-marker-alt fa-maroon" selected>Red</option>
+            <option value="fas fa-map-marker-alt fa-green">Green</option>
+            <option value="fas fa-map-marker-alt fa-blue">Blue</option>
+            <option value="fas fa-map-marker-alt fa-orange">Orange</option>
+            <option value="fas fa-map-marker-alt fa-purple">Purple</option>
+            <option value="fas fa-map-marker-alt fa-grey">Grey</option>
+            <option value="fas fa-map-marker-alt fa-gold">Gold</option>
+            </optgroup>
+        </select>
+        <select class='yellow-status-select' id="yellow-status-select">
+            <optgroup label='When to turn status yellow'>
+                <option value="1" selected>Yellow After 1 Week</option>
+                <option value="2" >Yellow After 2 Weeks</option>
+                <option value="3" >Yellow After 3 Weeks</option>
+                <option value="4" >Yellow After 4 Weeks</option>
+                <option value="5" >Yellow After 5 Weeks</option>
+                <option value="6" >Yellow After 6 Weeks</option>
+                <option value="7" >Yellow After 7 Weeks</option>
+                <option value="8" >Yellow After 8 Weeks</option>
+            </optgroup>
+        </select>
+        <select class='red-status-select' id="red-status-select">
+            <optgroup label='When to turn status red'>
+                <option value="2" selected>Red After 2 Weeks</option>
+                <option value="3" >Red After 3 Weeks</option>
+                <option value="4" >Red After 4 Weeks</option>
+                <option value="5" >Red After 5 Weeks</option>
+                <option value="6" >Red After 6 Weeks</option>
+                <option value="7" >Red After 7 Weeks</option>
+                <option value="8" >Red After 8 Weeks</option>
+                <option value="9" >Red After 9 Weeks</option>
+            </optgroup>
+        </select>
+        <button class='window-close-btn' id='window-close-btn'>X</button>
+    </div>
+
+    <!-- INVISIBLE -->
+    <div class='invisible'>
+        <!--  -->
+    <div class='store-pin-window' id='store-pin-window'>
+        <h1 class='store-pin-title' id='store-pin-title'></h1>
+        <small class='pin-small'>Store Name</small>
+        <h3 class='store-pin-notes' id='store-pin-notes'></h3>
+        <small class='pin-small'>Store Notes</small>
+        <button class='store-pin-edit' id='store-pin-edit'>Edit Store</button>
+    <div class='store-pin-status' id='store-pin-status'>
+        <h5 class='store-pin-last-update' id='store-pin-last-update'></h5>
+    </div>
+        <h5 class='pin-temp-data' id='pin-temp-data'></h5>
+    </div>
+    <!--  -->
+    <i id='maroon-icon' class="fas fa-map-marker-alt fa-maroon"></i>
+    <i id='green-icon' class="fas fa-map-marker-alt fa-green"></i>
+    <i id='blue-icon' class="fas fa-map-marker-alt fa-blue"></i>
+    <i id='orange-icon' class="fas fa-map-marker-alt fa-orange"></i>
+    <i id='purple-icon' class="fas fa-map-marker-alt fa-purple"></i>
+    <i id='grey-icon' class="fas fa-map-marker-alt fa-grey"></i>
+    <i id='gold-icon' class="fas fa-map-marker-alt fa-gold"></i>
+<!--  -->
+
+<form action="submit" class="store-creation" id="store-creation">
+    <div class='form-control'>
+        <label for="store-name">Store Name</label>
+        <input type="text" id="store-name" placeholder="Enter Store Name here">
+    </div>
+    <div class='form-control'>
+        <label for="store-notes">Store Notes</label>
+        <textarea rows="4" cols="50" id="store-notes" placeholder="Enter Notes About Store Here"></textarea>
+    </div>
+    <button id='store-creation-btn'>Add Store</button>
+
+
+</div>
+<!--  -->
+<!--  -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEDm7wbT2wyFn2AGKfhBh8RsYNMjjJ_-o&callback=initMap" async></script>
+    <script src="https://kit.fontawesome.com/6e4e6e16e0.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="/lib/moment/moment.min.js"></script>
+    <script src='/dashboard/dashboard-functions.js'></script>
+    <script src="/dashboard/dashboard.js"></script>
+</body>
+</html>
